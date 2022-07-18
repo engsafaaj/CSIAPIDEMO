@@ -23,9 +23,11 @@ namespace CSIAPIDEMO
          eForce forceUnits;
         eLength lengthUnits;
         eTemperature temperatureUnits;
+        string[] ObjectName;
         // Menus
         FileMenu fileMenu;
         EditMenu editMenu;
+        SlecteMenu slecteMenu;
 
         public Main()
         {
@@ -177,6 +179,7 @@ namespace CSIAPIDEMO
                 // Menus init
                 fileMenu = new FileMenu(mySapModel);
                 editMenu = new EditMenu(mySapModel);
+                slecteMenu = new SlecteMenu(mySapModel);
 
             }
             else
@@ -330,11 +333,20 @@ namespace CSIAPIDEMO
         private void RefreshWindow_Click(object sender, EventArgs e)
         {
             mySapModel.View.RefreshWindow();
+          
         }
 
         private void RefreshView_Click(object sender, EventArgs e)
         {
             mySapModel.View.RefreshView();
+        }
+
+        private void btn_getobjectslected_Click(object sender, EventArgs e)
+        {
+            slecteMenu.GetSelctedItems();
+            var slectlable=slecteMenu.SetSlectedObjectToView();
+            txt_state.Text = slectlable;
+            ObjectName = slecteMenu.GetObjectName();
         }
     }
 }

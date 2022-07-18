@@ -23,8 +23,6 @@ namespace CSIAPIDEMO.Menus
             try
             {
                 //Get a reference to cSapModel to access all API classes and functions
-                mySapModel = default(ETABSv1.cSapModel);
-
                 // Open File (EDB File)
                 ret = mySapModel.File.OpenFile(FileName);
                 //Check ret value 
@@ -50,7 +48,6 @@ namespace CSIAPIDEMO.Menus
             try
             {
                 //Get a reference to cSapModel to access all API classes and functions
-                mySapModel = default(ETABSv1.cSapModel);
 
 
                 // Open File (EDB File)

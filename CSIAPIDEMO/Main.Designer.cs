@@ -37,9 +37,17 @@ namespace CSIAPIDEMO
             this.btn_close = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ChangeConnectivity = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RefreshWindow = new System.Windows.Forms.ToolStripMenuItem();
+            this.RefreshView = new System.Windows.Forms.ToolStripMenuItem();
             this.defineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_All = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_prevselection = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_clearselection = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_invertselection = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_getobjectslected = new System.Windows.Forms.ToolStripMenuItem();
             this.assignToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analyzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,14 +58,6 @@ namespace CSIAPIDEMO
             this.txt_state = new System.Windows.Forms.ToolStripStatusLabel();
             this.progresstate = new System.Windows.Forms.ToolStripProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_ChangeConnectivity = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_All = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_prevselection = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_clearselection = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_invertselection = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_getobjectslected = new System.Windows.Forms.ToolStripMenuItem();
-            this.RefreshWindow = new System.Windows.Forms.ToolStripMenuItem();
-            this.RefreshView = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -138,6 +138,13 @@ namespace CSIAPIDEMO
             this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
+            // btn_ChangeConnectivity
+            // 
+            this.btn_ChangeConnectivity.Name = "btn_ChangeConnectivity";
+            this.btn_ChangeConnectivity.Size = new System.Drawing.Size(227, 26);
+            this.btn_ChangeConnectivity.Text = "Change Connectivity";
+            this.btn_ChangeConnectivity.Click += new System.EventHandler(this.btn_ChangeConnectivity_Click);
+            // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -146,6 +153,20 @@ namespace CSIAPIDEMO
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.viewToolStripMenuItem.Text = "View";
+            // 
+            // RefreshWindow
+            // 
+            this.RefreshWindow.Name = "RefreshWindow";
+            this.RefreshWindow.Size = new System.Drawing.Size(200, 26);
+            this.RefreshWindow.Text = "Refresh Window";
+            this.RefreshWindow.Click += new System.EventHandler(this.RefreshWindow_Click);
+            // 
+            // RefreshView
+            // 
+            this.RefreshView.Name = "RefreshView";
+            this.RefreshView.Size = new System.Drawing.Size(200, 26);
+            this.RefreshView.Text = "Refresh View";
+            this.RefreshView.Click += new System.EventHandler(this.RefreshView_Click);
             // 
             // defineToolStripMenuItem
             // 
@@ -164,6 +185,41 @@ namespace CSIAPIDEMO
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
             this.selectToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.selectToolStripMenuItem.Text = "Select";
+            // 
+            // btn_All
+            // 
+            this.btn_All.Name = "btn_All";
+            this.btn_All.Size = new System.Drawing.Size(234, 26);
+            this.btn_All.Text = "All";
+            this.btn_All.Click += new System.EventHandler(this.btn_All_Click);
+            // 
+            // btn_prevselection
+            // 
+            this.btn_prevselection.Name = "btn_prevselection";
+            this.btn_prevselection.Size = new System.Drawing.Size(234, 26);
+            this.btn_prevselection.Text = "Prev Selection";
+            this.btn_prevselection.Click += new System.EventHandler(this.btn_prevselection_Click);
+            // 
+            // btn_clearselection
+            // 
+            this.btn_clearselection.Name = "btn_clearselection";
+            this.btn_clearselection.Size = new System.Drawing.Size(234, 26);
+            this.btn_clearselection.Text = "Clear Selection";
+            this.btn_clearselection.Click += new System.EventHandler(this.btn_clearselection_Click);
+            // 
+            // btn_invertselection
+            // 
+            this.btn_invertselection.Name = "btn_invertselection";
+            this.btn_invertselection.Size = new System.Drawing.Size(234, 26);
+            this.btn_invertselection.Text = "InvertSelection";
+            this.btn_invertselection.Click += new System.EventHandler(this.btn_invertselection_Click);
+            // 
+            // btn_getobjectslected
+            // 
+            this.btn_getobjectslected.Name = "btn_getobjectslected";
+            this.btn_getobjectslected.Size = new System.Drawing.Size(234, 26);
+            this.btn_getobjectslected.Text = "Get Selection Objects";
+            this.btn_getobjectslected.Click += new System.EventHandler(this.btn_getobjectslected_Click);
             // 
             // assignToolStripMenuItem
             // 
@@ -235,61 +291,6 @@ namespace CSIAPIDEMO
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1062, 611);
             this.panel1.TabIndex = 2;
-            // 
-            // btn_ChangeConnectivity
-            // 
-            this.btn_ChangeConnectivity.Name = "btn_ChangeConnectivity";
-            this.btn_ChangeConnectivity.Size = new System.Drawing.Size(227, 26);
-            this.btn_ChangeConnectivity.Text = "Change Connectivity";
-            this.btn_ChangeConnectivity.Click += new System.EventHandler(this.btn_ChangeConnectivity_Click);
-            // 
-            // btn_All
-            // 
-            this.btn_All.Name = "btn_All";
-            this.btn_All.Size = new System.Drawing.Size(234, 26);
-            this.btn_All.Text = "All";
-            this.btn_All.Click += new System.EventHandler(this.btn_All_Click);
-            // 
-            // btn_prevselection
-            // 
-            this.btn_prevselection.Name = "btn_prevselection";
-            this.btn_prevselection.Size = new System.Drawing.Size(234, 26);
-            this.btn_prevselection.Text = "Prev Selection";
-            this.btn_prevselection.Click += new System.EventHandler(this.btn_prevselection_Click);
-            // 
-            // btn_clearselection
-            // 
-            this.btn_clearselection.Name = "btn_clearselection";
-            this.btn_clearselection.Size = new System.Drawing.Size(234, 26);
-            this.btn_clearselection.Text = "Clear Selection";
-            this.btn_clearselection.Click += new System.EventHandler(this.btn_clearselection_Click);
-            // 
-            // btn_invertselection
-            // 
-            this.btn_invertselection.Name = "btn_invertselection";
-            this.btn_invertselection.Size = new System.Drawing.Size(234, 26);
-            this.btn_invertselection.Text = "InvertSelection";
-            this.btn_invertselection.Click += new System.EventHandler(this.btn_invertselection_Click);
-            // 
-            // btn_getobjectslected
-            // 
-            this.btn_getobjectslected.Name = "btn_getobjectslected";
-            this.btn_getobjectslected.Size = new System.Drawing.Size(234, 26);
-            this.btn_getobjectslected.Text = "Get Selection Objects";
-            // 
-            // RefreshWindow
-            // 
-            this.RefreshWindow.Name = "RefreshWindow";
-            this.RefreshWindow.Size = new System.Drawing.Size(224, 26);
-            this.RefreshWindow.Text = "Refresh Window";
-            this.RefreshWindow.Click += new System.EventHandler(this.RefreshWindow_Click);
-            // 
-            // RefreshView
-            // 
-            this.RefreshView.Name = "RefreshView";
-            this.RefreshView.Size = new System.Drawing.Size(224, 26);
-            this.RefreshView.Text = "Refresh View";
-            this.RefreshView.Click += new System.EventHandler(this.RefreshView_Click);
             // 
             // Main
             // 
